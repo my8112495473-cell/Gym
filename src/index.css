@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-pink: #ec4899;
+  --color-brand-purple: #9333ea;
+  --color-brand-coral: #f43f5e;
+  --color-dark-charcoal: #0a0a0a;
+  --color-dark-card: rgba(255, 255, 255, 0.04);
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 15px rgba(236, 72, 153, 0.4), 0 0 30px rgba(147, 51, 234, 0.2);
+  }
+  .card-glow {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem; /* 24px/rounded-3xl */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-glow:hover {
+    box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.3);
+    border-color: rgba(236, 72, 153, 0.4);
+    transform: translateY(-2px);
+  }
+  .glow-purple {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glow-purple:hover {
+    box-shadow: 0 20px 40px -15px rgba(147, 51, 234, 0.3);
+    border-color: rgba(147, 51, 234, 0.4);
+    transform: translateY(-2px);
+  }
+}
+
+/* Custom scrollbar and behavior */
+html {
+  scroll-behavior: smooth;
+  background-color: #0a0a0a;
+}
+
+html.light {
+  background-color: #fcfbf9;
+}
+
+/* Common overrides for Light Theme */
+.light body {
+  background-color: #fcfbf9;
+  color: #1a1615;
+}
+
+.light section {
+  background-color: #fcfbf9 !important;
+  color: #1a1615 !important;
+}
+
+/* Heading color corrections */
+.light h1, .light h2, .light h3, .light h4, .light h5, .light h6,
+.light .text-white {
+  color: #1a1615 !important;
+}
+
+/* Body / details text corrections */
+.light p, 
+.light .text-gray-300, 
+.light .text-gray-400,
+.light .text-gray-500,
+.light .text-white\/70,
+.light .text-white\/80 {
+  color: #4c4644 !important;
+}
+
+/* Navigation Overrides */
+.light #main-navigation {
+  background-color: rgba(252, 251, 249, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.light #main-navigation a:not(.relative) {
+  color: #4c4644 !important;
+}
+
+.light #main-navigation a:hover {
+  color: #ec4899 !important;
+}
+
+.light #navigation-logo span.text-white {
+  color: #1a1615 !important;
+}
+
+/* Mobile drawer inside navigation */
+.light #mobile-navigation-drawer,
+.light #mobile-navigation-drawer div {
+  background-color: rgba(252, 251, 249, 0.98) !important;
+}
+
+.light #mobile-navigation-drawer a {
+  color: #4c4644 !important;
+}
+
+.light #mobile-navigation-drawer a:hover {
+  background-color: rgba(236, 72, 153, 0.05) !important;
+  color: #ec4899 !important;
+}
+
+/* Class and Feature Cards */
+.light .card-glow,
+.light .glow-purple,
+.light .bg-dark-card,
+.light .bg-white\/\[0\.03\],
+.light .bg-white\/5 {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  box-shadow: 0 4px 20px -2px rgba(236, 72, 153, 0.03), 0 10px 15px -3px rgba(0, 0, 0, 0.03) !important;
+}
+
+.light .card-glow:hover {
+  box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.15) !important;
+  border-color: rgba(236, 72, 153, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+.light .glow-purple:hover {
+  box-shadow: 0 20px 40px -15px rgba(147, 51, 234, 0.15) !important;
+  border-color: rgba(147, 51, 234, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+/* Category tab buttons */
+.light #services-tabs button:not(.bg-gradient-to-r) {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #4c4644 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.light #services-tabs button:not(.bg-gradient-to-r):hover {
+  background-color: rgba(236, 72, 153, 0.08) !important;
+  color: #ec4899 !important;
+}
+
+/* Grid & Border details */
+.light .border-white\/5,
+.light .border-white\/10,
+.light .border-white\/15,
+.light .border-white\/20,
+.light .border-white\/25,
+.light .divide-white\/5,
+.light .divide-white\/10 {
+  border-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+/* Buttons and icons secondary states */
+.light .bg-white\/5:not(button),
+.light .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.light .bg-white\/10:hover {
+  background-color: rgba(0, 0, 0, 0.07) !important;
+}
+
+/* Contact Inputs & Form controls */
+.light input,
+.light select,
+.light textarea {
+  background-color: #ffffff !important;
+  color: #1a1615 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.light input:focus,
+.light select:focus,
+.light textarea:focus {
+  border-color: #ec4899 !important;
+  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.15) !important;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+  color: #9c9491 !important;
+}
+
+/* Footer structure styling */
+.light footer {
+  background-color: #f7f6f3 !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.light footer p,
+.light footer a {
+  color: #615a58 !important;
+}
+
+.light footer a:hover {
+  color: #ec4899 !important;
+}
+
+/* Chatbot container adjustments */
+.light #chatbot-widget {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.18) !important;
+}
+
+.light #chatbot-widget .classname-scroller {
+  scrollbar-color: rgba(236, 72, 153, 0.3) transparent;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+.light ::-webkit-scrollbar-track {
+  background: #fcfbf9;
+}
+::-webkit-scrollbar-thumb {
+  background: #ec4899;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f43f5e;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Everfit Ladies Gym",
+  "description": "Lucknow's premium ladies-only fitness center offering Aerobics, CrossFit, Zumba, Yoga, and personal training in a safe, luxurious, and highly motivating environment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
